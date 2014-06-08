@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
 
 	def index
-		@events = Event.first(10)
+		@events = Event.all
 		@event_list = []
 		@events.each do |event|
 			event.happen_at = Date.parse(event.happen_at)
