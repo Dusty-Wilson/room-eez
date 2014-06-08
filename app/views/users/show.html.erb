@@ -17,9 +17,11 @@
 	</div>
 
 	<div id= "events_nav">
+		<div class="table_header">
 		<h2>Events</h2>
 		<span class = "plus"><%= link_to "+", new_event_path, class:"new"%></span>
-	
+		</div>
+		
 		<% @events.each do |event|%>
 			<tr>
 			    <td><%= event.name %></td>

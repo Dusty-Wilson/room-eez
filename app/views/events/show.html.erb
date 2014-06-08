@@ -15,7 +15,6 @@ Date: <%=@event.happen_at%><br>
 <% end %>
 
 
-
 	<% if @event.attendees.nil? %>
   	<h4> No one is going to this event! </h4>
   <% else %>
@@ -35,6 +34,7 @@ Date: <%=@event.happen_at%><br>
 				<div class="comment">
 					<p><%= c.content %></p>
 					<%= c.author.name %>
+				<p><%= link_to 'Delete', [@commentable, c], method: :delete, data: { confirm: "Delete comment?" } %></p>
 				</div>
 			<% end %>
 			</ul>
