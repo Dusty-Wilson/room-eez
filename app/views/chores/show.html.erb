@@ -1,4 +1,4 @@
-<div>
+<div class="show_page">
 
 <h2><%= @chore.name%></h2>
 Description: <%=@chore.description%><br>
@@ -15,7 +15,6 @@ Date: <%=@chore.happen_at%><br>
 <% elsif !current_user.participating_in_chore?(@chore.id)%>
 	<%= link_to "Sign Up For This Chore", chore_participation_path(@chore), method: 'post' %>
 <% end %>
-</div>
 
 
 	<% if @chore.chore_doers.nil? %>
@@ -28,26 +27,13 @@ Date: <%=@chore.happen_at%><br>
 		</ul>
 	    <% end %>
 	<% end %>
+</div>
 
 
-<div>
-	<h2>Comments</h2>
-	<div id="comment-list">
-		<% if !@comments.empty? %>
-			<ul>
-			<% @comments.each do |c| %>
-				<div class="comment">
-					<p><%= c.content %></p>
-					<%= c.author.name %>
-				</div>
-				<p><%= link_to 'Delete', [@commentable, c], method: :delete, data: { confirm: "Delete comment?" } %></p>
-			<% end %>
-			</ul>
-		<% else %>
-			<p> No comments yet! </p>
-		<% end %>
-	</div>
+
 	<div id="new-comment-form">
 		<%= render :partial => "partials/comment" %>
 	</div>
+	
 </div>
+
