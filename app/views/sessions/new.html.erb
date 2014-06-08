@@ -1,13 +1,15 @@
+<div class="sign_up">
 <h2>Login</h2>
 
-<%= form_for :session, url: sessions_path do |f| %>
+<%= form_for :session, url: sessions_path, :html => { :class => "pure-form pure-form-stacked"} do |f| %>
 
-  <%= f.label :email %>:
-  <%= f.text_field :email%><br />
+  <%= f.label :email %>
+  <%= f.text_field :email%>
 
-  <%= f.label :password %>:
-  <%= f.password_field :password%><br />
+  <%= f.label :password %>
+  <%= f.password_field :password%>
 
-  <%= f.submit %>
+  <%= f.submit "Submit", :class => 'pure-button' %>
   
 <% end %>
+</div>

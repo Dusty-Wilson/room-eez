@@ -48,6 +48,12 @@ a{
 	text-decoration: none;
 	color: #5a5c66;
 }
+
+
+.sign_up {
+	margin-left: 20px;
+}
+
 .new{
 	font-size: 2em;
 	font-weight: 900;

@@ -22,12 +22,11 @@
 	</div>
 
 
-	<%= form_for [@commentable, Comment.new] do |f| %>
+	<%= form_for [@commentable, Comment.new], :html => {:class => "pure-form" } do |f| %>
 	  <p>
 	    <%= f.label :content %><br />
-	    <%= f.text_area :content %>
+	    <%= f.text_field :content, {:onkeyup=>"if (event.keyCode == 13) {handlerButton()}"} %>
 	  </p>
-	  <p><%= f.submit "Submit" %></p>
 	<% end %>
 	
 </div>
