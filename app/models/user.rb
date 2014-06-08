@@ -56,4 +56,20 @@ class User < ActiveRecord::Base
   	end
   end
 
+  def participating_in_bill?(bill_id)
+  	if self.bill_participations.pluck(:bill_id).include?(bill_id)
+  		return true
+  	else
+  		return false
+  	end
+  end
+
+  def participating_in_event?(event_id)
+    if self.event_participations.pluck(:event_id).include?(event_id)
+      return true
+    else
+      return false
+    end
+  end
+
 end
