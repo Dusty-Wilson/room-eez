@@ -98,7 +98,18 @@ ul{
 	font-weight: 900;
 }
 
+
 .creator a{
+
+}
+
+.view_calendar {
+	font-size: 1em;
+	font-weight: 900;
+}
+
+.creator a{
+>>>>>>> master
 	color: #69915a;
 }
 
@@ -195,6 +206,7 @@ ul{
   padding: 0;
   font-size: 11px;
   text-align: center;
+}
 
 .welcome_page {
 	width: 80%;
@@ -211,6 +223,13 @@ ul{
 .iou_table td, th {
 	padding: 0 5px;
 }
+
+
+
+/*legend {
+	position: absolute;
+}
+>>>>>>> master
 
 
 /*#events_nav {

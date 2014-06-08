@@ -1,5 +1,10 @@
 class BillsController < ApplicationController
 
+	def index
+		@bill_list = Bill.first(Bill.all.length)
+    	@date = params[:month] ? Date.parse("#{params[:month]}-01") : Date.today
+	end
+
 	def show
 		@bill = Bill.find(params[:id])
 	end
