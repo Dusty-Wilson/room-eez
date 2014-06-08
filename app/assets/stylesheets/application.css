@@ -126,6 +126,7 @@ ul{
 	margin: 0 auto;
 }
 
+
 .show_page {
 	width:40%;
 	/*border: 1px solid black;*/
@@ -136,8 +137,21 @@ ul{
 	vertical-align: top;
 }
 
+.welcome_page {
+	width: 80%;
+	margin-left: 100px;
+	/*border: 1px solid black;*/
+	text-align: center;
+}
 
+.iou_table {
+	text-align: left;
+	margin-right: 30px;
+}
 
+.iou_table td, th {
+	padding: 0 5px;
+}
 /*legend {
 	position: absolute;
 }
