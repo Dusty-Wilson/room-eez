@@ -26,5 +26,7 @@ Rails.application.routes.draw do
   resources 'chores' do
     resources 'comments'
   end
+
+  get '/calendar', to: 'calendar#show'
   
 end

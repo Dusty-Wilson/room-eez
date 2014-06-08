@@ -33,6 +33,8 @@ gem 'coveralls', require: false
 
 gem "table_print"
 
+gem 'table_builder', '0.0.3', :git => 'git://github.com/jchunky/table_builder.git'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
