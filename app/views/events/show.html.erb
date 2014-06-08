@@ -3,7 +3,7 @@
 Description: <%=@event.description%><br>
 Date: <%=@event.happen_at%><br>
 
-<% if current_user.id == @event.creator_id %> 
+<% if current_user.id == @event.creator_id %>
 	<%= link_to "edit this event", edit_event_path(@event) %>
 	<%= link_to "delete this event", event_path(@event), method: :delete, data: { confirm: "Are you sure?" } %>
 
@@ -12,7 +12,7 @@ Date: <%=@event.happen_at%><br>
 
 <% else %>
 	<h3>You are attending this event!</h3>
-	
+
 <% end %>
 
 
@@ -20,11 +20,15 @@ Date: <%=@event.happen_at%><br>
   	<h4> No one is going to this event! </h4>
   <% else %>
 		<h4>People attending this event:</h4>
+
+		<table>
+			<tr>
 		<% @event.attendees.each do |name| %>
-		<ul>
-			<li><%= name.first_name %></li>
-		</ul>
+			<td><%= name.first_name %></td>
+	  </tr>
 	    <% end %>
+		</table>
+
 	<% end %>
 </div>
 
@@ -32,5 +36,5 @@ Date: <%=@event.happen_at%><br>
 	<div id="new-comment-form">
 		<%= render :partial => "partials/comment" %>
 	</div>
-	
+
 </div>

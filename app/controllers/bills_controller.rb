@@ -50,19 +50,13 @@ class BillsController < ApplicationController
 		end
 	end
 
-	# def edit
-	# 	@bill = Bill.find(params[:id])
 
-	# end
+  def participate
+		@bill = Bill.find_by_id(params[:id])
+		current_user.bills << @bill
 
-	# def update
-	# 	@bill = Bill.find(params[:id])
- #    @bill.update_attributes(bill_params)
-
-	# 	redirect_to bill_path(@bill)
-
-	# end
-
+		redirect_to bill_path(@bill)
+	end
 
 	private
 	def bill_params

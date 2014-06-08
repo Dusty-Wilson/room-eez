@@ -3,7 +3,7 @@ class Bill < ActiveRecord::Base
 	belongs_to :creator,
 		class_name: "User"
 
-	has_many :bill_participations
+	has_many :bill_participations, dependent: :destroy
 
 	has_many :debtors,
 		through: :bill_participations,
@@ -12,7 +12,7 @@ class Bill < ActiveRecord::Base
 	has_many :comments, as: :commentable
 
 	validates_presence_of :title, :description, :creator_id, :cost
-	
+
 	def cost_f
 		"$#{self.cost.to_f.round(2)}"
 	end
