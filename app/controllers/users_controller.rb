@@ -27,10 +27,13 @@ class UsersController < ApplicationController
       @chores = Chore.all.order('created_at DESC')
       # @events = @user.events
       @events = Event.all.order('happen_at DESC')
-    else current_user
+    else 
       redirect_to root_path
     end
   end
+
+
+
 
   private
     def user_params

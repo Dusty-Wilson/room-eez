@@ -30,7 +30,6 @@ class Bill < ActiveRecord::Base
 
 	def get_iou(user_id)
 		bill = get_bill_participation(user_id)
-		puts bill.first.iou
 		bill.first.iou
 	end
 end
