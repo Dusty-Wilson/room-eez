@@ -1,7 +1,8 @@
 class BillsController < ApplicationController
 	# include ApplicationHelper
 	def show
-		@bill = Bill.find(params[:id])
+		@bill = @commentable = Bill.find(params[:id])
+		@comments = @bill.comments
 	end
 
 	def create

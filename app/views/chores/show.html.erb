@@ -20,7 +20,6 @@ Date: <%=@chore.happen_at%><br>
 
 <div>
 	<h2>Comments</h2>
-	<%= link_to "+", new_chore_comment_path(@chore) %>
 	<div id="comment-list">
 		<% if !@comments.empty? %>
 			<ul>
@@ -34,5 +33,8 @@ Date: <%=@chore.happen_at%><br>
 		<% else %>
 			<p> No comments yet! </p>
 		<% end %>
+	</div>
+	<div id="new-comment-form">
+		<%= render :partial => "partials/comment" %>
 	</div>
 </div>
