@@ -48,6 +48,12 @@ a{
 	text-decoration: none;
 	color: #5a5c66;
 }
+
+
+.sign_up {
+	margin-left: 20px;
+}
+
 .new{
 	font-size: 2em;
 	font-weight: 900;
@@ -120,6 +126,7 @@ ul{
 	margin: 0 auto;
 }
 
+
 .show_page {
 	width:40%;
 	/*border: 1px solid black;*/
@@ -129,6 +136,7 @@ ul{
 	/*top: 0;*/
 	vertical-align: top;
 }
+
 
 #calendar table {
   border-collapse: collapse;
@@ -191,9 +199,22 @@ ul{
   padding: 0;
   font-size: 11px;
   text-align: center;
+
+.welcome_page {
+	width: 80%;
+	margin-left: 100px;
+	/*border: 1px solid black;*/
+	text-align: center;
 }
 
+.iou_table {
+	text-align: left;
+	margin-right: 30px;
+}
 
+.iou_table td, th {
+	padding: 0 5px;
+}
 /*legend {
 	position: absolute;
 }

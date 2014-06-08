@@ -42,7 +42,7 @@ class EventsController < ApplicationController
 		@event = Event.find_by_id(params[:id])
 		@event.update_attributes(params_event)
 
-		redirect_to current_user
+		redirect_to event_path(@event)
 	end
 
 

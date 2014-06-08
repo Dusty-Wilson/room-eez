@@ -4,14 +4,27 @@
 	Amount: <%=@bill.cost%><br>
 
 	Bill creator: <%=@bill.creator.name %>
-	<% @bill.debtors %>
+	
 
-	<%= link_to "Edit bill", edit_bill_path(@bill) %>
-	<h3>People paying this bill</h3>
+	<h3>People assigned to pay this bill</h3>
+		<table class = "iou_table">
+			<tr>
+				<th>Name</th>
+				<th>Amount Owed</th>
+				<th>Paid?</th>
+			</tr>
 
+			<tr>
+				<% @bill.debtors.each do |person| %>
+				<td><%= person.name %></td>
+				<td><%= @bill.get_iou(person.id) %></td>
+				<td><input type="checkbox" /></td>
+			</tr>
+	   <% end %>
+		</table>
+
+		<h3><%= link_to "All debts repaid!" %></h3>
 </div>
-
-
 
 
 	<div id="new-comment-form">

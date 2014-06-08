@@ -33,6 +33,7 @@ class BillsController < ApplicationController
 		redirect_to "/users/#{current_user.id}"
 	end
 
+
 	def update
 		@user = current_user
 		@bill = Bill.find(params[:id])
@@ -42,6 +43,20 @@ class BillsController < ApplicationController
 			render :edit
 		end
 	end
+
+	# def edit
+	# 	@bill = Bill.find(params[:id])
+		
+	# end
+
+	# def update 
+	# 	@bill = Bill.find(params[:id])
+ #    @bill.update_attributes(bill_params)
+
+	# 	redirect_to bill_path(@bill)
+		
+	# end
+
 
 	private
 	def bill_params

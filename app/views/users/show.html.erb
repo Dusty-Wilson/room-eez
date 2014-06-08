@@ -18,11 +18,13 @@
 			  	<li class="item"><%= link_to event.name, event_path(event) %><br>
 			  <% end %>
 			    <%= event.description %><br>
+
 				<% if current_user.id == event.creator_id %>
 			    	<%= link_to "Edit", edit_event_path(event) %>
 			    	<%= link_to "Remove", event, method: :delete, data: { confirm: "Are you sure?" } %></li>
 			    <%end%>
 	  		</ul> <br><br>
+
 	  	<%end%>
 			<!-- </fieldset> -->
 	</div>
@@ -42,11 +44,13 @@
 			    <li class="item"><%= link_to bill.title, bill_path(bill) %><br>
 			  <%end%>  
 			    <%= bill.description %><br>
+
 			    <% if current_user.id == bill.creator_id %>
 			    	<%= link_to "Edit", edit_bill_path(bill) %>
 			    	<%= link_to "Remove", bill, method: :delete, data: { confirm: "Are you sure?" } %></li>
 			    <%end%>
 	  	</ul> <br><br>
+
 		<%end%>
 	<!-- </fieldset> -->
 	</div>
