@@ -102,6 +102,11 @@ ul{
 	font-weight: 900;
 }
 
+.view_calendar {
+	font-size: 1em;
+	font-weight: 900;
+}
+
 .creator a{	
 	color: #69915a;
 }
@@ -215,6 +220,8 @@ ul{
 .iou_table td, th {
 	padding: 0 5px;
 }
+
+
 /*legend {
 	position: absolute;
 }
