@@ -7,10 +7,15 @@ def rand_date
   Date.today.advance(days: n)
 end
 
+# firsts = %w[Sasha Steve Sammy Monica Ariel Casey Jared Dusty Jaimin Daniel].create!(:user => first_name)
+# firsts.each do |i|
+# %w[Grodzins Yim Rihawi Cho Diamond Cumbow Daughtery Wilson Patel Deutsch].create!(:user => last_name)
+
+
 10.times do |i|
 	user = User.create!(
-		first_name: Faker::Name.first_name, 
-		last_name: Faker::Name.last_name, 
+		first_name: Faker::Name.first_name,
+		last_name: Faker::Name.last_name,
 		email: Faker::Internet.email,
 		password: "password",
 		phone_number: "(123)123-1234")

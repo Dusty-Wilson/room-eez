@@ -4,11 +4,13 @@
 
 <div id="all_things">
 
-	<div id= "events_nav">
+	<div class= "events_nav">
 		<!-- <fieldset id="events_nav"> -->
-		<legend><h2>Events</h2></legend>
+			<h2>Events</h2>
+
 		<span class="view_calendar"><%= link_to "View Events Calendar", events_path, class:"view_calendar" %></span>
 		<span class = "add"><%= link_to "+", new_event_path, class:"new"%></span>
+
 		<% @events.each do |event|%>
 			<ul>
 				<% if current_user.id == event.creator_id %>
@@ -33,7 +35,8 @@
 
 	<div id="bills_nav">
 	<!-- <fieldset id="events_nav"> -->
-		<legend><h2>Bills</h2></legend>
+
+		<h2>Bills</h2>
 		<span class="view_calendar"><%= link_to "View Bills Calendar", bills_path, class:"view_calendar" %></span>
 		<span class = "add"><%= link_to "+", "/bills/new", class:"new"%></span>
 		<% @bills.each do |bill|%>
@@ -44,7 +47,7 @@
 			    <li class="participating item"><%= link_to bill.title, bill_path(bill) %></li>
 			  <%else%>
 			    <li class="item"><%= link_to bill.title, bill_path(bill) %><br>
-			  <%end%>  
+			  <%end%>
 			    <%= bill.description %><br>
 
 			    <% if current_user.id == bill.creator_id %>
@@ -71,7 +74,7 @@
 					<li class="participating item"><%= link_to chore.name, "/chores/#{chore.id}" %><br>
 				<% else %>
 					<li class="item"><%= link_to chore.name, "/chores/#{chore.id}"%><br>
-					
+
 				<% end %>
 					<%=chore.description%><br>
 					<%=chore.happen_at%><br>
@@ -79,5 +82,5 @@
 				<%end%>
 			</ul>
 	</div>
-	
+
 </div>
