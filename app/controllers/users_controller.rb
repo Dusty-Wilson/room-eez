@@ -28,7 +28,7 @@ class UsersController < ApplicationController
       # @events = @user.events
       @events = Event.all
     else current_user
-      redirect_to root
+      redirect_to root_path
     end
   end
 
