@@ -1,35 +1,46 @@
 <h1><%= @user.first_name %>'s Profile Page</h2>
 
+<ul>
+	
+</ul>
+
 <div id="all_things">
 
-	<div id="bills_nav">
-		<h2>Bills</h2>
-		<span class = "add"><%= link_to "+", "/bills/new", class:"new"%></span>
-		<% @bills.each do |bill|%>
-		<tr>
-		    <td><%= bill.title %></td>
-		    <td><%= bill.description %></td>
-		    <td><%= link_to "Show", bill %></td>
-		    <td><%= link_to "Edit", edit_bill_path(bill) %></td>
-		    <td><%= link_to "Remove", bill, method: :delete, data: { confirm: "Are you sure?" } %></td>
-	  	</tr> <br><br>
-		<%end%>
-	</div>
-
 	<div id= "events_nav">
-		<h2>Events</h2>
+		<!-- <fieldset id="events_nav"> -->
+		<legend><h2>Events</h2></legend>
 		<span class = "add"><%= link_to "+", new_event_path, class:"new"%></span>
 		<% @events.each do |event|%>
 			<tr>
-			    <td><%= event.name %></td>
+			    <td><%= link_to event.name, event_path(event) %></td><br>
 			    <td><%= event.description %></td>
 			    <td><%= link_to "Show", event %></td>
 			    <td><%= link_to "Edit", edit_event_path(event) %></td>
 			    <td><%= link_to "Remove", event, method: :delete, data: { confirm: "Are you sure?" } %></td>
 	  		</tr> <br><br>
 	  	<%end%>
-			
+			<!-- </fieldset> -->
 	</div>
+
+
+	<div id="bills_nav">
+	<!-- <fieldset id="events_nav"> -->
+		<legend><h2>Bills</h2></legend>
+		<span class = "add"><%= link_to "+", "/bills/new", class:"new"%></span>
+		<% @bills.each do |bill|%>
+		<tr>
+		    <td><%= link_to bill.title, bill_path(bill) %></td><br>
+		    <td><%= bill.description %></td>
+		    <td><%= link_to "Show", bill %></td>
+		    <td><%= link_to "Edit", edit_bill_path(bill) %></td>
+		    <td><%= link_to "Remove", bill, method: :delete, data: { confirm: "Are you sure?" } %></td>
+	  	</tr> <br><br>
+		<%end%>
+	<!-- </fieldset> -->
+	</div>
+
+
+
 
 	<div id= "chores_nav">
 		<h2>Chores</h2>
@@ -46,7 +57,7 @@
 				<% end %>
 					<%=chore.description%><br>
 					<%=chore.happen_at%><br>
-				</li>
+				</li><br>
 				<%end%>
 			</ul>
 	</div>

@@ -123,6 +123,18 @@ ul{
 	margin: 0 auto;
 }
 
+/*legend {
+	position: absolute;
+}
+
+#events_nav {
+	width: 30%;
+	height: 300px;
+	margin: 30px;
+	/*overflow: hidden;*/
+	/*overflow: auto;
+}*/
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
