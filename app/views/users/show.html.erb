@@ -7,6 +7,7 @@
 	<div id= "events_nav">
 		<!-- <fieldset id="events_nav"> -->
 		<legend><h2>Events</h2></legend>
+		<span class="view_calendar"><%= link_to "View Events Calendar", events_path, class:"view_calendar" %></span>
 		<span class = "add"><%= link_to "+", new_event_path, class:"new"%></span>
 		<% @events.each do |event|%>
 			<ul>
@@ -33,6 +34,7 @@
 	<div id="bills_nav">
 	<!-- <fieldset id="events_nav"> -->
 		<legend><h2>Bills</h2></legend>
+		<span class="view_calendar"><%= link_to "View Bills Calendar", bills_path, class:"view_calendar" %></span>
 		<span class = "add"><%= link_to "+", "/bills/new", class:"new"%></span>
 		<% @bills.each do |bill|%>
 		<ul>
@@ -59,6 +61,7 @@
 	<div id= "chores_nav">
 
 		<h2>Chores</h2>
+		<span class="view_calendar"><%= link_to "View Chores Calendar", chores_path, class:"view_calendar" %></span>
 			<span class = "add"><%= link_to "+", new_chore_path, class:"new"%></span>
 			<ul>
 				<% @chores.each do |chore|%>
