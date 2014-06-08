@@ -6,8 +6,9 @@ class CommentsController < ApplicationController
 	end
 
 	def create
-	  @commentable = find_commentable
-	  @comment = @commentable.comments.build(params[:comment])
+	  @commentable = find_commentable #commentable object
+	  @comment = @commentable.comments.new(comment_params)
+	  @comment.author = current_user
 	  if @comment.save
 	    flash[:notice] = "Successfully created comment."
 	    redirect_to @commentable
@@ -18,18 +19,14 @@ class CommentsController < ApplicationController
 
 	private
 
-  def user_params
-    params.require(:user).permit(:first_name,
-    	:last_name,
-    	:email,
-    	:password,
-    	:phone_number)
+  def comment_params
+    params.require(:comment).permit(:content)
   end
 
 	def find_commentable
 	  params.each do |name, value|
-	    if name =~ /(.+)_id$/
-	      return $1.classify.constantize.find(value)
+	    if name =~ /(.+)_id$/ #chore_id => 3
+	      return $1.classify.constantize.find(value) #Chore.find(3)
 	    end
 	  end
 	  nil

@@ -26,3 +26,22 @@ Date: <%=@event.happen_at%><br>
 		</ul>
 	    <% end %>
 	<% end %>
+
+	<h2>Comments</h2>
+	<div id="comment-list">
+		<% if !@comments.empty? %>
+			<ul>
+			<% @comments.each do |c| %>
+				<div class="comment">
+					<p><%= c.content %></p>
+					<%= c.author.name %>
+				</div>
+			<% end %>
+			</ul>
+		<% else %>
+			<p> No comments yet! </p>
+		<% end %>
+	</div>
+	<div id="new-comment-form">
+		<%= render :partial => "partials/comment" %>
+	</div>

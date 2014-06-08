@@ -11,11 +11,15 @@ Rails.application.routes.draw do
 
   resources 'sessions'
 
-  resources 'bills'
+  resources 'bills' do
+    resources 'comments'
+  end
   
   post '/events/:id/participate' => 'events#participate', :as => 'event_participation'
 
-  resources 'events'
+  resources 'events' do
+    resources 'comments'
+  end
 
   post '/chores/:id/participate' => "chores#participate", :as => 'chore_participation'
   

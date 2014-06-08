@@ -3,3 +3,23 @@ Description: <%= @bill.description%><br>
 Amount: <%=@bill.cost%><br>
 
 <%= link_to "Edit bill", "#{@bill.id}/edit" %>
+
+<h2>Comments</h2>
+
+<div id="comment-list">
+	<% if !@comments.empty? %>
+		<ul>
+		<% @comments.each do |c| %>
+			<div class="comment">
+				<p><%= c.content %></p>
+				<%= c.author.name %>
+			</div>
+		<% end %>
+		</ul>
+	<% else %>
+		<p> No comments yet! </p>
+	<% end %>
+</div>
+<div id="new-comment-form">
+	<%= render :partial => "partials/comment" %>
+</div>
