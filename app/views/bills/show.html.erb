@@ -1,26 +1,33 @@
-<h2><%= @bill.title%></h2>
-Description: <%= @bill.description%><br>
-Amount: <%=@bill.cost%><br>
+<div class="show_page">
+	<h2><%= @bill.title%></h2>
+	Description: <%= @bill.description%><br>
+	Amount: <%=@bill.cost%><br>
 
-<%= link_to "Edit bill", edit_bill_path(@bill) %>
+	Bill creator: <%=@bill.creator.name %>
 
-<h2>Comments</h2>
+	<h3>People assigned to pay this bill</h3>
+		<table class = "iou_table">
+			<tr>
+				<th>Name</th>
+				<th>Amount Owed</th>
+				<th>Paid?</th>
+			</tr>
 
-<div id="comment-list">
-	<% if !@comments.empty? %>
-		<ul>
-		<% @comments.each do |c| %>
-			<div class="comment">
-				<p><%= c.content %></p>
-				<%= c.author.name %>
-				<p><%= link_to 'Delete', [@commentable, c], method: :delete, data: { confirm: "Delete comment?" } %></p>
-			</div>
-		<% end %>
-		</ul>
-	<% else %>
-		<p> No comments yet! </p>
-	<% end %>
+			<tr>
+				<% @bill.debtors.each do |person| %>
+				<td><%= person.name %></td>
+				<td><%= @bill.get_iou(person.id) %></td>
+				<td><input type="checkbox" /></td>
+			</tr>
+	   <% end %>
+		</table>
+
+		<h3><%= link_to "All debts repaid!" %></h3>
 </div>
-<div id="new-comment-form">
-	<%= render :partial => "partials/comment" %>
+
+
+	<div id="new-comment-form">
+		<%= render :partial => "partials/comment" %>
+	</div>
+
 </div>

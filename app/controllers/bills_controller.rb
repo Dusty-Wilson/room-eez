@@ -36,28 +36,19 @@ class BillsController < ApplicationController
 		redirect_to "/users/#{current_user.id}"
 	end
 
-	def edit
-		@bill = Bill.find(params[:id])
-	end
+	# def edit
+	# 	@bill = Bill.find(params[:id])
+		
+	# end
 
-	def update
-		@bill = Bill.find(params[:id])
+	# def update 
+	# 	@bill = Bill.find(params[:id])
+ #    @bill.update_attributes(bill_params)
 
-		if bill_participation_params[:emails]
-			@emails = bill_participation_params[:emails].split(", ")
-			
-			@emails.each do |email|
-				user = User.find_by_email(email)
-				user.bill_participations.update_attributes(bill_id: @bill.id, iou: @bill.cost / (@emails.length + 1))
-			end
-		end
+	# 	redirect_to bill_path(@bill)
+		
+	# end
 
-		if @bill.update(bill_params)
-			redirect_to(@bill)
-		else
-			render :edit
-		end
-	end
 	private
 	def bill_params
 		params.require(:bill).permit(:title, :description, :cost,:bill_participations)

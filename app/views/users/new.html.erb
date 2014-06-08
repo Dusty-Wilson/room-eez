@@ -1,26 +1,28 @@
-<h2>Sign Up</h2>
-<% if @errors %>
-<ul>
-  <% @errors.each do |e| %>
-  <li><%= e %></li>
+<div class="sign_up">
+  <h2>Sign Up</h2>
+  <% if @errors %>
+  <ul>
+    <% @errors.each do |e| %>
+    <li><%= e %></li>
+    <% end %>
+  </ul>
   <% end %>
-</ul>
-<% end %>
-<%= form_for @user do |f| %>
-  <%= f.label :first_name %>:
-  <%= f.text_field :first_name %><br />
+  <%= form_for @user, :html => { :class => "pure-form pure-form-stacked"} do |f| %>
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name %>
 
-  <%= f.label :last_name %>:
-  <%= f.text_field :last_name %><br />
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name %>
 
-  <%= f.label :email %>:
-  <%= f.text_field :email%><br />
+    <%= f.label :email %>
+    <%= f.text_field :email%>
 
-  <%= f.label :password %>:
-  <%= f.password_field :password%><br />
+    <%= f.label :password %>
+    <%= f.password_field :password%>
 
-  <%= f.label :phone_number %>:
-  <%= f.text_field :phone_number%><br />
+    <%= f.label :phone_number %>
+    <%= f.text_field :phone_number%>
 
-  <%= f.submit %>
-<% end %>
+    <%= f.submit "Submit", :class => 'pure-button' %>
+  <% end %>
+</div>
