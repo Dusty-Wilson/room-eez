@@ -27,6 +27,9 @@ class BillsController < ApplicationController
 	def new
 		@bill = Bill.new
 		@user = current_user
+		if request.xhr?
+			render :new, :layout => false	
+		end
 	end
 
 	def destroy

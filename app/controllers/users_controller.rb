@@ -26,13 +26,8 @@ class UsersController < ApplicationController
       # @chores = @user.chores
       @chores = Chore.all.order('created_at DESC')
       # @events = @user.events
-<<<<<<< HEAD
-      @events = Event.all
-    else
-=======
       @events = Event.all.order('happen_at DESC')
-    else current_user
->>>>>>> e21ac99af27b38b932fc0ba8d5a75559ee46f4b9
+    else 
       redirect_to root_path
     end
   end
