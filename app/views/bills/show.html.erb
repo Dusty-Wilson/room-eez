@@ -13,6 +13,7 @@ Amount: <%=@bill.cost%><br>
 			<div class="comment">
 				<p><%= c.content %></p>
 				<%= c.author.name %>
+				<p><%= link_to 'Delete', [@commentable, c], method: :delete, data: { confirm: "Delete comment?" } %></p>
 			</div>
 		<% end %>
 		</ul>

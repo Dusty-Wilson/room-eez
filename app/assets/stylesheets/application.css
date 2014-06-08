@@ -116,6 +116,13 @@ ul{
   right: 10px;
 }
 
+
+.table_header{
+	background-color: blue;
+	display: inline;
+	margin: 0 auto;
+}
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.

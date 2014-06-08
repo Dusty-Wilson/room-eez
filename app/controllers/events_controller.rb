@@ -22,7 +22,6 @@ class EventsController < ApplicationController
 		redirect_to current_user
 	end
 
-
 	def edit
 		@event = Event.find_by_id(params[:id])
 

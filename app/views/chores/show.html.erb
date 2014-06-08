@@ -28,6 +28,7 @@ Date: <%=@chore.happen_at%><br>
 					<p><%= c.content %></p>
 					<%= c.author.name %>
 				</div>
+				<p><%= link_to 'Delete', [@commentable, c], method: :delete, data: { confirm: "Delete comment?" } %></p>
 			<% end %>
 			</ul>
 		<% else %>
