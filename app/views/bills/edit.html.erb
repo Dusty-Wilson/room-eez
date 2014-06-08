@@ -1,0 +1,7 @@
+<form accept-charset="UTF-8" action="/bills" method="post">
+	<input name="_method" type="hidden" value="patch" />
+  	<input type="text" name="bill[title]" value=<%= @bill %> /><br>
+  	<input type="text" name="bill[description]" value=<%= @bill.description %> /><br>
+  	<input type="text" name="bill[cost]" value=<%= @bill.cost %> /><br>
+  	<input type="submit" value="Submit" />
+</form>

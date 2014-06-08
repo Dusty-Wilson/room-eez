@@ -1,8 +1,7 @@
 class BillsController < ApplicationController
-	# include ApplicationHelper
+
 	def show
-		@bill = @commentable = Bill.find(params[:id])
-		@comments = @bill.comments
+		@bill = Bill.find(params[:id])
 	end
 
 	def create
@@ -34,7 +33,8 @@ class BillsController < ApplicationController
 		redirect_to "/users/#{current_user.id}"
 	end
 
-	def edit
+	def update
+		@user = current_user
 		@bill = Bill.find(params[:id])
 		if @bill.update(bill_params)
 			redirect_to(@bill)
