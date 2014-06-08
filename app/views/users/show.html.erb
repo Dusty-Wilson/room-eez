@@ -1,10 +1,10 @@
 <h1><%= @user.first_name %>'s Profile Page</h2>
 
-<div class="all_things">
+<div id="all_things">
 
 	<div id="bills_nav">
 		<h2>Bills</h2>
-		<span class = "plus"><%= link_to "+", "/bills/new", class:"new"%></span>
+		<span class = "add"><%= link_to "+", "/bills/new", class:"new"%></span>
 		<% @bills.each do |bill|%>
 		<tr>
 		    <td><%= bill.title %></td>
@@ -18,7 +18,7 @@
 
 	<div id= "events_nav">
 		<h2>Events</h2>
-		<span class = "plus"><%= link_to "+", new_event_path, class:"new"%></span>
+		<span class = "add"><%= link_to "+", new_event_path, class:"new"%></span>
 	
 		<% @events.each do |event|%>
 			<tr>
@@ -34,15 +34,15 @@
 
 	<div id= "chores_nav">
 		<h2>Chores</h2>
-			<span class = "plus"><%= link_to "+", new_chore_path, class:"new"%></span>
+			<span class = "add"><%= link_to "+", new_chore_path, class:"new"%></span>
 			<ul>
 				<% @chores.each do |chore|%>
 				<% if current_user.id == chore.creator_id %>
-					<li class= "creator"><%= link_to chore.name, "/chores/#{chore.id}" %><br>
+					<li class= "creator item"><%= link_to chore.name, "/chores/#{chore.id}" %><br>
 				<% elsif current_user.participating_in_chore?(chore.id) %>
-					<li class="participating"><%= link_to chore.name, "/chores/#{chore.id}" %><br>
+					<li class="participating item"><%= link_to chore.name, "/chores/#{chore.id}" %><br>
 				<% else %>
-					<li><%= link_to chore.name, "/chores/#{chore.id}"%><br>
+					<li class="item"><%= link_to chore.name, "/chores/#{chore.id}"%><br>
 					
 				<% end %>
 					<%=chore.description%><br>
