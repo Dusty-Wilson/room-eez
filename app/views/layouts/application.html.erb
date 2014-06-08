@@ -10,7 +10,6 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<div class="container">
 	<header>
 		<h1><%= link_to "Room-Eez", root_path %></h1>
 		<ul>
@@ -23,6 +22,7 @@
 				<li><%= link_to "Log In", user_login_path %></li>
 			<% end %>
 	</header>
+	<div class="container">
 	<%= yield %>
 	</div>
 </body>

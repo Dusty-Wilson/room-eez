@@ -6,14 +6,16 @@ class BillsController < ApplicationController
 	end
 
 	def create
-		@bill = Bill.create!(bill_params)
-		@emails = bill_participation_params[:emails].split(", ")
-		
-		@emails.each do |email|
-			puts "*" * 1500
-			puts email
-			user = User.find_by_email(email)
-			BillParticipation.create!(bill_id: @bill.id, user_id: user.id, iou: @bill.cost / (@emails.length + 1))
+		@user = current_user
+		@bill = @user.created_bills.create!(bill_params)
+
+		if bill_params[:bill_participations]
+		@emails = bill_params[:bill_participations][:emails].split(", ")
+			
+			@emails.each do |email|
+				user = User.find_by_email(email)
+				BillParticipation.create!(bill_id: @bill.id, user_id: user.id, iou: @bill.cost / (@emails.length + 1))
+			end
 		end
 		if @bill.save
 			redirect_to @bill
@@ -36,19 +38,32 @@ class BillsController < ApplicationController
 
 	def edit
 		@bill = Bill.find(params[:id])
+	end
+
+	def update
+		@bill = Bill.find(params[:id])
+
+		if bill_participation_params[:emails]
+			@emails = bill_participation_params[:emails].split(", ")
+			
+			@emails.each do |email|
+				user = User.find_by_email(email)
+				user.bill_participations.update_attributes(bill_id: @bill.id, iou: @bill.cost / (@emails.length + 1))
+			end
+		end
+
 		if @bill.update(bill_params)
 			redirect_to(@bill)
 		else
 			render :edit
 		end
 	end
-
 	private
 	def bill_params
-		params.require(:bill).permit(:title, :description, :creator_id, :cost)
+		params.require(:bill).permit(:title, :description, :cost,:bill_participations)
 	end
 
 	def bill_participation_params
-		params.require(:bill_participation).permit(:emails)
+		params.require(:bill_participations).permit(:emails)
 	end
 end

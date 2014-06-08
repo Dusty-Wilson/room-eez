@@ -1,4 +1,4 @@
-Rails.application.routes.draw do
+  Rails.application.routes.draw do
   root 'welcome#index'
   
   delete '/logout' => 'sessions#destroy', :as => 'user_logout'

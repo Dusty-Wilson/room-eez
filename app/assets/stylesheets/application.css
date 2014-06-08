@@ -8,8 +8,8 @@ header {
 	background-color: #568ca3;
 	color: white;
 	margin: 0;
+	padding-bottom: 12px;
 	border-bottom: 5px solid #a17558;
-	position: fixed;
 	top:0;
 }
 
@@ -20,7 +20,7 @@ header h1{
 }
 
 header ul {
-	/*height: 100%;*/
+	height: 100%;
 	float: right;
 	font-size: 1.75em;
 	list-style: none;
@@ -61,15 +61,17 @@ a{
 
 /***** Dashboard column display ******/
 
+#all_things{
+	margin: 0 auto;
+}
+
 #all_things div {
 	width: 26%;
 	height: 450px;
 	margin: 1%;
 	display: inline-block;
 	background-color: #dbd7ce;
-	/*border: solid 1px black;*/
 	vertical-align:super;
-	/*float: right;*/
 	padding: 30px;
 	overflow:scroll;
 	position: relative;
@@ -91,26 +93,19 @@ a{
 	border: none;
 }
 
-.participating a{
-	color: #69915a;
-}
 /**** CHORE ****/
 ul{
 	list-style: none;
 	padding: 0 10px 5px;
 }
 
-/*a{
-	text-decoration: none;
-	color: #5a5c66;
-}*/
 .new{
 	font-size: 2em;
 	font-weight: 900;
 }
 
 .creator a{	
-	color: #69915a;
+	color: #708f64;
 }
 
 .participating a{
@@ -125,6 +120,25 @@ ul{
   top: 0px;
   right: 10px;
 }
+
+
+.table_header{
+	background-color: blue;
+	display: inline;
+	margin: 0 auto;
+}
+
+/*legend {
+	position: absolute;
+}
+
+#events_nav {
+	width: 30%;
+	height: 300px;
+	margin: 30px;
+	/*overflow: hidden;*/
+	/*overflow: auto;
+}*/
 
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files

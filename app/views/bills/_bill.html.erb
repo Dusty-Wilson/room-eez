@@ -1,0 +1,13 @@
+<%= form_for(@bill) do |f| %>
+		<%= f.label :title %>
+		<%= f.text_field :title %>
+		<%= f.label :description %>
+		<%= f.text_field :description %>
+		<%= f.label :cost %>
+		<%= f.text_field :cost %>
+		<%= fields_for(:bill_participations) do |u| %>
+			<%= u.label :emails %>
+			<%= u.text_field :emails %>
+		<% end %>
+		<%= f.submit "Submit Bill" %>
+		<% end %>

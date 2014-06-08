@@ -22,9 +22,9 @@ class UsersController < ApplicationController
       @user = User.find(params[:id])
 
       # @bills = @user.bills  
-      @bills = Bill.all	
+      @bills = Bill.all.order('created_at DESC')
       # @chores = @user.chores
-      @chores = Chore.all
+      @chores = Chore.all.order('created_at DESC')
       # @events = @user.events
       @events = Event.all
     else
