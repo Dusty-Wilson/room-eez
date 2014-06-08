@@ -27,8 +27,8 @@ class UsersController < ApplicationController
       @chores = Chore.all
       # @events = @user.events
       @events = Event.all
-    else current_user
-      redirect_to root
+    else
+      redirect_to root_path
     end
   end
 

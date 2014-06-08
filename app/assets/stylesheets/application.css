@@ -4,16 +4,18 @@ body{
 
 /****  Nav Bar *****/
 header {
+	width: 100%;
 	background-color: #568ca3;
 	color: white;
 	margin: 0;
-	padding-bottom: 12px;
 	border-bottom: 5px solid #a17558;
-	/*border: 2px solid black;*/
+	position: fixed;
+	top:0;
 }
 
 header h1{
 	margin-left:20px;
+	top: 12px;
 	display: inline-block;
 }
 
@@ -81,8 +83,16 @@ a{
 	text-decoration: underline;
 }
 
+.item,
+.item a {
+	color: #a17558;
+	background-color: #dbd7ce;
+	position: relative;
+	border: none;
+}
+
 .participating a{
-	color: #bd3e5a;
+	color: #69915a;
 }
 /**** CHORE ****/
 ul{

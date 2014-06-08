@@ -33,8 +33,10 @@
 	</div>
 
 	<div id= "chores_nav">
-		<h2>Chores</h2>
-			<span class = "add"><%= link_to "+", new_chore_path, class:"new"%></span>
+		<header class="item">
+			<h2>Chores</h2>
+				<span class = "add"><%= link_to "+", new_chore_path, class:"new"%></span>
+		</header>
 			<ul>
 				<% @chores.each do |chore|%>
 				<% if current_user.id == chore.creator_id %>
