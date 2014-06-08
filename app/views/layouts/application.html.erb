@@ -3,12 +3,14 @@
 <head>
   <title>RoomEez</title>
 
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700' rel='stylesheet' type='text/css'>
 	<%= stylesheet_link_tag    'normalize', media: 'all'%>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+	<div class="container">
 	<header>
 		<h1><%= link_to "Room-Eez", root_path %></h1>
 		<ul>
@@ -22,6 +24,6 @@
 			<% end %>
 	</header>
 	<%= yield %>
-
+	</div>
 </body>
 </html>
