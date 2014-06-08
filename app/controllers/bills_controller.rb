@@ -6,13 +6,14 @@ class BillsController < ApplicationController
 	end
 
 	def show
-		@bill = Bill.find(params[:id])
+		@bill = @commentable = Bill.find(params[:id])
+		@comments = @bill.comments
 	end
 
 	def create
 		@bill = Bill.create!(bill_params)
 		@emails = bill_participation_params[:emails].split(", ")
-		
+
 		@emails.each do |email|
 			puts "*" * 1500
 			puts email
@@ -51,15 +52,15 @@ class BillsController < ApplicationController
 
 	# def edit
 	# 	@bill = Bill.find(params[:id])
-		
+
 	# end
 
-	# def update 
+	# def update
 	# 	@bill = Bill.find(params[:id])
  #    @bill.update_attributes(bill_params)
 
 	# 	redirect_to bill_path(@bill)
-		
+
 	# end
 
 

@@ -26,7 +26,7 @@
 			    	<%= link_to "Edit", edit_event_path(event) %>
 			    	<%= link_to "Remove", event, method: :delete, data: { confirm: "Are you sure?" } %></li>
 			    <%end%>
-	  		</ul> <br><br>
+	  		</ul>
 
 	  	<%end%>
 			<!-- </fieldset> -->
@@ -42,7 +42,7 @@
 		<% @bills.each do |bill|%>
 		<ul>
 				<% if current_user.id == bill.creator_id %>
-			    <li class="creator item"><%= link_to bill.title, bill_path(bill) %></li><br>
+			    <li class="creator item"><%= link_to bill.title, bill_path(bill) %></li>
 			  <% elsif current_user.participating_in_bill?(bill.id) %>
 			    <li class="participating item"><%= link_to bill.title, bill_path(bill) %></li>
 			  <%else%>
@@ -51,10 +51,9 @@
 			    <%= bill.description %><br>
 
 			    <% if current_user.id == bill.creator_id %>
-			    	<%= link_to "Edit", edit_bill_path(bill) %>
 			    	<%= link_to "Remove", bill, method: :delete, data: { confirm: "Are you sure?" } %></li>
 			    <%end%>
-	  	</ul> <br><br>
+	  	</ul>
 
 		<%end%>
 	<!-- </fieldset> -->
