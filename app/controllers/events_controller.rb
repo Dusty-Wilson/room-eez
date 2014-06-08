@@ -1,4 +1,15 @@
 class EventsController < ApplicationController
+
+	def index
+		@events = Event.all
+		@event_list = []
+		@events.each do |event|
+			event.happen_at = Date.parse(event.happen_at)
+			@event_list << event
+		end
+    	@date = params[:month] ? Date.parse("#{params[:month]}-01") : Date.today
+	end
+
 	def show
 		@event = @commentable = Event.find(params[:id])
 		@comments = @event.comments

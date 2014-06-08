@@ -17,7 +17,7 @@
 				<% @bill.debtors.each do |person| %>
 				<td><%= person.name %></td>
 				<td><%= @bill.get_iou(person.id) %></td>
-				<td><input type="checkbox" /></td>
+				<td><%= link_to 'paid!'%></td>
 			</tr>
 	   <% end %>
 		</table>

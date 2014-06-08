@@ -21,11 +21,15 @@ Date: <%=@chore.happen_at%><br>
   	<h4> No one is signed up for this chore! </h4>
   <% else %>
 		<h4>People signed up for this chore:</h4>
-		<% @chore.chore_doers.each do |name| %>
-		<ul>
-			<li><%= name.first_name %></li>
-		</ul>
-	    <% end %>
+
+			<table>
+				<tr>
+					<% @chore.chore_doers.each do |name| %>
+					<td><%= name.first_name %></td>
+				</tr>
+		    <%end%>
+			</table>
+
 	<% end %>
 </div>
 
@@ -34,6 +38,6 @@ Date: <%=@chore.happen_at%><br>
 	<div id="new-comment-form">
 		<%= render :partial => "partials/comment" %>
 	</div>
-	
+
 </div>
 

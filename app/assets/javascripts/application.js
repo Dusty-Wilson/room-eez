@@ -15,11 +15,10 @@
 //= require turbolinks
 //= require_tree .
 
-
 $(function(){
+	// Was working =/ now it's not. What the hell.
 	$(".new").on("click", function(e){
 		e.preventDefault();
-		console.log(e);
 
 		var url = e.target.href;
 		console.log(url);
@@ -27,4 +26,5 @@ $(function(){
 			$(e.target.parentElement.parentElement).after(response);
 		});
 	});
+  // $("#event_happen_at").datepicker();
 });

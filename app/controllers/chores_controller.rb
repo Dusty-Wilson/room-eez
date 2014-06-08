@@ -1,5 +1,10 @@
 class ChoresController < ApplicationController
-	# include ApplicationHelper
+
+	def index
+		@chore_list = Chore.first(Chore.all.length)
+    	@date = params[:month] ? Date.parse("#{params[:month]}-01") : Date.today
+	end
+
 	def show
 		@chore = @commentable = Chore.find_by_id(params[:id])
 		@comments = @chore.comments

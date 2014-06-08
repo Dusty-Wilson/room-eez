@@ -1,5 +1,10 @@
 class BillsController < ApplicationController
-	# include ApplicationHelper
+
+	def index
+		@bill_list = Bill.first(Bill.all.length)
+    	@date = params[:month] ? Date.parse("#{params[:month]}-01") : Date.today
+	end
+
 	def show
 		@bill = @commentable = Bill.find(params[:id])
 		@comments = @bill.comments
@@ -39,18 +44,24 @@ class BillsController < ApplicationController
 		redirect_to "/users/#{current_user.id}"
 	end
 
-	# def edit
-	# 	@bill = Bill.find(params[:id])
-		
-	# end
 
-	# def update 
-	# 	@bill = Bill.find(params[:id])
- #    @bill.update_attributes(bill_params)
+	def update
+		@user = current_user
+		@bill = Bill.find(params[:id])
+		if @bill.update(bill_params)
+			redirect_to(@bill)
+		else
+			render :edit
+		end
+	end
 
-	# 	redirect_to bill_path(@bill)
-		
-	# end
+
+  def participate
+		@bill = Bill.find_by_id(params[:id])
+		current_user.bills << @bill
+
+		redirect_to bill_path(@bill)
+	end
 
 	private
 	def bill_params
