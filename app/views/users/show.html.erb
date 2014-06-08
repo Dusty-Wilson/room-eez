@@ -4,8 +4,7 @@
 
 	<div id="bills_nav">
 		<h2>Bills</h2>
-
-		<h3><%= link_to "Create new bill", "/bills/new" %></h3><br>
+		<span class = "plus"><%= link_to "+", "/bills/new", class:"new"%></span>
 		<% @bills.each do |bill|%>
 		<tr>
 		    <td><%= bill.title %></td>
@@ -19,7 +18,7 @@
 
 	<div id= "events_nav">
 		<h2>Events</h2>
-		<h4><%= link_to "Create a new event!", new_event_path %></h4>
+		<span class = "plus"><%= link_to "+", new_event_path, class:"new"%></span>
 	
 		<% @events.each do |event|%>
 			<tr>
@@ -35,7 +34,7 @@
 
 	<div id= "chores_nav">
 		<h2>Chores</h2>
-			<%= link_to "+", new_chore_path, class:"new"%>
+			<span class = "plus"><%= link_to "+", new_chore_path, class:"new"%></span>
 			<ul>
 				<% @chores.each do |chore|%>
 				<% if current_user.id == chore.creator_id %>
