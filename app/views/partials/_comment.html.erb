@@ -1,7 +1,33 @@
-<%= form_for [@commentable, Comment.new] do |f| %>
-  <p>
-    <%= f.label :content %><br />
-    <%= f.text_area :content %>
-  </p>
-  <p><%= f.submit "Submit" %></p>
-<% end %>
+<div class="show_page">
+	<h2>Comments</h2>
+	<div id="comment-list">
+		<% if !@comments.empty? %>
+			<ul>
+			<% @comments.each do |c| %>
+
+				<div class="comment">
+					<p><%= c.content %></p>
+					posted by: <%= c.author.name %>
+					<% if current_user.id == c.author_id %>
+						<p><%= link_to 'Delete', [@commentable, c], method: :delete, data: { confirm: "Delete comment?" } %></p>
+						<% end %>
+				</div>
+
+				<% end %>
+
+			</ul>
+		<% else %>
+			<p> No comments yet! </p>
+		<% end %>
+	</div>
+
+
+	<%= form_for [@commentable, Comment.new] do |f| %>
+	  <p>
+	    <%= f.label :content %><br />
+	    <%= f.text_area :content %>
+	  </p>
+	  <p><%= f.submit "Submit" %></p>
+	<% end %>
+	
+</div>
