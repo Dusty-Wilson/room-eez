@@ -40,10 +40,6 @@ header a {
 	color: white;
 }
 
-ul{
-	list-style: none;
-}
-
 a{
 	text-decoration: none;
 	color: #5a5c66;
@@ -59,7 +55,7 @@ a{
 	font-weight: 900;
 }
 
-.creator a{	
+.creator a{
 	color: #69915a;
 }
 
@@ -102,7 +98,7 @@ ul{
 	font-weight: 900;
 }
 
-.creator a{	
+.creator a{
 	color: #69915a;
 }
 
@@ -152,17 +148,27 @@ ul{
 .iou_table td, th {
 	padding: 0 5px;
 }
-/*legend {
-	position: absolute;
-}
 
-#events_nav {
+
+/*#events_nav {
 	width: 30%;
 	height: 300px;
 	margin: 30px;
-	/*overflow: hidden;*/
-	/*overflow: auto;
+	overflow: hidden;
+	overflow: auto;
 }*/
+
+/*.item_title {
+	background-color: blue;
+	position: fixed !important;
+	height: 10px !important;
+	margin-bottom: 0;
+	top: 188px;
+  left: 0px;
+  overflow: hidden;
+}
+*/
+
 
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
@@ -180,4 +186,4 @@ ul{
  *= require_self
  */
 
- 
+

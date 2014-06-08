@@ -4,10 +4,10 @@
 
 <div id="all_things">
 
-	<div id= "events_nav">
+	<div class= "events_nav">
 		<!-- <fieldset id="events_nav"> -->
-		<legend><h2>Events</h2></legend>
-		<span class = "add"><%= link_to "+", new_event_path, class:"new"%></span>
+			<h2>Events</h2>
+			<span class = "add"><%= link_to "+", new_event_path, class:"new"%></span>
 		<% @events.each do |event|%>
 			<ul>
 				<% if current_user.id == event.creator_id %>
@@ -21,7 +21,8 @@
 			    <%= link_to "Show", event %>
 			    <%= link_to "Edit", edit_event_path(event) %>
 			    <%= link_to "Remove", event, method: :delete, data: { confirm: "Are you sure?" } %></li>
-	  		</ul> 
+
+	  		</ul>
 	  	<%end%>
 			<!-- </fieldset> -->
 	</div>
@@ -29,7 +30,7 @@
 
 	<div id="bills_nav">
 	<!-- <fieldset id="events_nav"> -->
-		<legend><h2>Bills</h2></legend>
+		<h2>Bills</h2>
 		<span class = "add"><%= link_to "+", "/bills/new", class:"new"%></span>
 		<% @bills.each do |bill|%>
 		<ul>
@@ -39,7 +40,7 @@
 			    <li class="participating item"><%= link_to bill.title, bill_path(bill) %></li>
 			  <%else%>
 			    <li class="item"><%= link_to bill.title, bill_path(bill) %><br>
-			  <%end%>  
+			  <%end%>
 			    <%= bill.description %><br>
 			    <%= link_to "Show", bill %>
 			    <%= link_to "Edit", edit_bill_path(bill) %>
@@ -62,7 +63,7 @@
 					<li class="participating item"><%= link_to chore.name, "/chores/#{chore.id}" %><br>
 				<% else %>
 					<li class="item"><%= link_to chore.name, "/chores/#{chore.id}"%><br>
-					
+
 				<% end %>
 					<%=chore.description%><br>
 					<%=chore.happen_at%><br>
@@ -70,5 +71,5 @@
 				<%end%>
 			</ul>
 	</div>
-	
+
 </div>
