@@ -54,8 +54,10 @@
 			  <%end%>
 			  <br>
 			    <%= bill.description %><br>
-			    <%= link_to "Edit", edit_bill_path(bill) %>
+			    <% if current_user.id == bill.creator_id %>
+			    	
 			    <%= link_to "Remove", bill, method: :delete, data: { confirm: "Are you sure?" } %></li>
+			    <% end %>
 		<%end%>
 	  	</ul>
 	<!-- </fieldset> -->

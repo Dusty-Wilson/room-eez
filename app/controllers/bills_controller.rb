@@ -45,15 +45,15 @@ class BillsController < ApplicationController
 	end
 
 
-	def update
-		@user = current_user
-		@bill = Bill.find(params[:id])
-		if @bill.update(bill_params)
-			redirect_to(@bill)
-		else
-			render :edit
-		end
-	end
+	# def update
+	# 	@user = current_user
+	# 	@bill = Bill.find(params[:id])
+	# 	if @bill.update(bill_params)
+	# 		redirect_to(@bill)
+	# 	else
+	# 		render :edit
+	# 	end
+	# end
 
 
   def participate
