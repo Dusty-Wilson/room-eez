@@ -41,7 +41,7 @@
 
 		<h2>Bills</h2>
 		<span class="view_calendar"><%= link_to "View Bills Calendar", bills_path, class:"view_calendar" %></span>
-		<span class = "add"><%= link_to "+", "/bills/new", class:"new"%></span>
+		<span class = "add"><%= link_to "+", new_bill_path, class:"new"%></span>
 		</header>
 		<ul>
 		<% @bills.each do |bill|%>
@@ -64,8 +64,8 @@
 	<div id= "chores_nav">
 		<header class="item">
 			<h2>Chores</h2>
+			<span class="add"><%= link_to "+", new_chore_path, class:"new"%></span>
 			<span class="view_calendar"><%= link_to "View Chores Calendar", chores_path, class:"view_calendar" %></span>
-				<span class = "add"><%= link_to "+", new_chore_path, class:"new"%></span>
 		</header>
 			<ul>
 				<% @chores.each do |chore|%>
