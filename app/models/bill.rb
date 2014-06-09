@@ -34,6 +34,12 @@ class Bill < ActiveRecord::Base
 	end
 
 	def happen_at
-		self.created_at
+		rand_date
+	end
+
+	def rand_date
+	  # return a random date within 100 days of today in both past and future directions.
+	  n = rand(-8..18)
+	  Date.today.advance(days: n)
 	end
 end

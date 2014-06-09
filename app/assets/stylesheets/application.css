@@ -1,3 +1,4 @@
+
 body{
 	font-family: 'Open Sans Condensed', sans-serif;
 }
@@ -98,6 +99,9 @@ ul{
 	font-weight: 900;
 }
 
+#parth{
+	height:100%;
+}
 
 
 .view_calendar {
@@ -140,7 +144,7 @@ ul{
 	vertical-align: top;
 }
 
-#user_name{
+.user_name{
 	margin-left: 20px;
 }
 
