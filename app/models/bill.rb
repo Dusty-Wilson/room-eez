@@ -11,7 +11,7 @@ class Bill < ActiveRecord::Base
 
 	has_many :comments, as: :commentable
 
-	validates_presence_of :title, :description, :creator_id, :cost
+	validates_presence_of :name, :description, :creator_id, :cost
 
 	def cost_f
 		"$#{self.cost.to_f.round(2)}"
@@ -31,5 +31,9 @@ class Bill < ActiveRecord::Base
 	def get_iou(user_id)
 		bill = get_bill_participation(user_id)
 		bill.first.iou
+	end
+
+	def happen_at
+		self.created_at
 	end
 end
