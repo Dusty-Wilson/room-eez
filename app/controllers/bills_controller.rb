@@ -60,7 +60,7 @@ class BillsController < ApplicationController
 
 	private
 	def bill_params
-		params.require(:bill).permit(:title, :description, :creator_id, :cost)
+		params.require(:bill).permit(:name, :description, :creator_id, :cost)
 	end
 
 	def bill_participation_params

@@ -140,11 +140,16 @@ ul{
 	vertical-align: top;
 }
 
+#user_name{
+	margin-left: 20px;
+}
+
 
 #calendar table {
   border-collapse: collapse;
   width: 100%;
 }
+
 
 #calendar td,
 #calendar th {

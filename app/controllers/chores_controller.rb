@@ -8,7 +8,6 @@ class ChoresController < ApplicationController
 	def show
 		@chore = @commentable = Chore.find_by_id(params[:id])
 		@comments = @chore.comments
-
 	end
 
 	def new

@@ -2,11 +2,11 @@ require 'spec_helper'
 
 describe Bill do
 
-	it {should have_db_column(:title)}
+	it {should have_db_column(:name)}
 	it {should have_db_column(:description)}
 	it {should have_db_column(:creator_id)}
 	
-	let(:bill) {Bill.new(:title => 'Utilities',
+	let(:bill) {Bill.new(:name => 'Utilities',
 											 :description => 'For June',
 											 :creator_id => 1,
 											 :cost => 35)}
@@ -22,9 +22,9 @@ describe Bill do
 
 	end 
 
-	describe "#title" do
-		it 'should return the bill title' do
-			expect(bill.title).to eq "Utilities"
+	describe "#name" do
+		it 'should return the bill name' do
+			expect(bill.name).to eq "Utilities"
 		end 
 	end 
 
@@ -50,7 +50,7 @@ describe Bill do
 	end	 
 
 	context "validates presence of" do
-		it {bill.should validate_presence_of(:title)}
+		it {bill.should validate_presence_of(:name)}
 		it {bill.should validate_presence_of(:description)}
 		it {bill.should validate_presence_of(:creator_id)}
 		it {bill.should validate_presence_of(:cost)}

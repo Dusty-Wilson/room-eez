@@ -1,4 +1,4 @@
-<h1><%= @user.first_name %>'s Profile Page</h2>
+<h1 id="user_name"><%= @user.first_name %>'s Profile Page</h2>
 
 
 
@@ -42,11 +42,11 @@
 		<% @bills.each do |bill|%>
 		<ul>
 				<% if current_user.id == bill.creator_id %>
-			    <li class="creator item"><%= link_to bill.title, bill_path(bill) %></li>
+			    <li class="creator item"><%= link_to bill.name, bill_path(bill) %></li>
 			  <% elsif current_user.participating_in_bill?(bill.id) %>
-			    <li class="participating item"><%= link_to bill.title, bill_path(bill) %></li>
+			    <li class="participating item"><%= link_to bill.name, bill_path(bill) %></li>
 			  <%else%>
-			    <li class="item"><%= link_to bill.title, bill_path(bill) %><br>
+			    <li class="item"><%= link_to bill.name, bill_path(bill) %><br>
 			  <%end%>
 			    <%= bill.description %><br>
 

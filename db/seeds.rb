@@ -21,7 +21,7 @@ end
 		phone_number: "(123)123-1234")
 
 	bill = Bill.create!(
-		title: Faker::Address.country,
+		name: Faker::Address.country,
 		description: Faker::Lorem.sentence(3),
 		creator_id: user.id,
 		cost: rand()

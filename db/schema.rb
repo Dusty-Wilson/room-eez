@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20140605153928) do
   end
 
   create_table "bills", force: true do |t|
-    t.string   "title"
+    t.string   "name"
     t.string   "description"
     t.integer  "creator_id"
     t.float    "cost"
