@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20140605153928) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "bill_participations", force: true do |t|
     t.integer  "user_id"
     t.integer  "bill_id"
@@ -65,7 +68,7 @@ ActiveRecord::Schema.define(version: 20140605153928) do
   create_table "events", force: true do |t|
     t.string   "name"
     t.string   "description"
-    t.string   "happen_at"
+    t.datetime "happen_at"
     t.integer  "creator_id"
     t.datetime "created_at"
     t.datetime "updated_at"
